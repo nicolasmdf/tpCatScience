@@ -1,15 +1,5 @@
 '''
-
-
-
-
-
-
-
-8) Función para cargar 4 vectores de n elementos en una matriz
-9) Función para pasar las columnas de una matriz 4x3 a vectores independientes
-10) Función para pasar las filas de una matriz 4x3 a vectores independientes
-
+1) Codear las 10 funciones
 No se pueden usar funciones de otras librerias como Numpy.
 
 2) Deben escribir el codigo como funciones de los algoritmos. Hacer un menú que permita:
@@ -92,6 +82,7 @@ def buscarRango(vector):
     ordenarVector(vector)
     n = len(vector)
     return vector[n-1] - vector[0]
+
 # 7) Función para sumar 2 vectores
 def sumarVectores(v1, v2):
     longitud = min(len(v1), len(v2))
@@ -104,3 +95,38 @@ def sumarVectores(v1, v2):
     elif len(v2) > longitud:
         vectorSuma.extend(v2[longitud:])
     return vectorSuma
+
+# 8) Función para cargar 4 vectores de n elementos en una matriz
+def cargarMatriz(v1,v2,v3,v4):
+    mat = [v1,v2,v3,v4]
+    return mat
+
+# 9) Función para pasar las columnas de una matriz 4x3 a vectores independientes
+def colsAVectores(mat):
+    v1 = [mat[0][0], mat[1][0], mat[2][0], mat[3][0]]
+    v2 = [mat[0][1], mat[1][1], mat[2][1], mat[3][1]]
+    v3 = [mat[0][2], mat[1][2], mat[2][2], mat[3][2]]
+    return v1, v2, v3
+
+# 10) Función para pasar las filas de una matriz 4x3 a vectores independientes
+def filasAVectores(mat):
+    v1 = mat[0]
+    v2 = mat[1]
+    v3 = mat[2]
+    v4 = mat[3]
+    return v1, v2, v3, v4
+
+def main():
+    vector1, vector2 = []
+    print('Bienvenido, elija 1 para cargar vectores, 2 para sumarlos o 3 para multiplicarlos. Presione x para salir.')
+    while True:
+        n = input()
+        if n == "x":
+            break
+    if n == 1 and len(vector1) == 0:
+        vector1 = cargarVector()
+    elif n == 1 and len(vector2) == 0:
+        vector2 = cargarVector()
+    elif len(vector1) != 0 and len(vector2) != 0:
+        print('Ambos vectores han sido cargados')
+        
